@@ -4,11 +4,14 @@ import user_icon from "../../Pictures/person_24dp_FILL1_wght400_GRAD0_opsz24.png
 import email_icon from "../../Pictures/mail_24dp_FILL1_wght400_GRAD0_opsz24.png";
 import password_icon from "../../Pictures/lock_24dp_FILL1_wght400_GRAD0_opsz24.png";
 
-const LoginSignup = () => {
+const LoginSignup = ({ handleClose }) => {
   const [action, setAction] = useState("Login");
   return (
     <div className="login-signup">
       <div className="container">
+        <div className="close-icon" onClick={handleClose}>
+          &#x2716;
+        </div>
         <div className="header">
           <div className="text">{action}</div>
           <div className="underline"></div>

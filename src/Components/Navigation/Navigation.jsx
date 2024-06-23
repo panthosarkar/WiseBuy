@@ -1,37 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Navigation/Navigation.css";
+import "../Modals/LoginSignup";
+import LoginSignup from "../Modals/LoginSignup";
+import { Link } from "react-router-dom";
 
 function Navigation() {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShow = () => setShowModal(true);
+  const handleClose = () => setShowModal(false);
+
   return (
     <div className="nav-container">
       <div className="nav-elements">
+        <div className="logo">WiseBuy</div>
         <ul>
           <li>
-            <h1>WiseBuy</h1>
+            <Link to=".">Home</Link>
           </li>
           <li>
-            <a href="#">Home</a>
+            <Link to=".">Shop</Link>
           </li>
           <li>
-            <a href="#">Shop</a>
+            <Link to=".">Contact</Link>
           </li>
           <li>
-            <a href="#">Contact</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="material-symbols-outlined">shopping_cart</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="material-symbols-outlined">person</span>
-            </a>
+            <Link to=".">About</Link>
           </li>
         </ul>
+        <div className="cart-login">
+          <Link to=".">
+            <span class="material-symbols-outlined">shopping_cart</span>
+          </Link>
+          <Link to="." onClick={handleShow}>
+            <span class="material-symbols-outlined">person</span>
+          </Link>
+          {showModal && <LoginSignup handleClose={handleClose} />}
+        </div>
       </div>
     </div>
   );

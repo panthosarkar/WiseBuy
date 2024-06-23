@@ -1,45 +1,65 @@
 .nav-container {
-  backdrop-filter: blur(10px);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  color: white; /* Text color for links and other text */
-  padding: 10px 20px; /* Padding around the navigation content */
-}
-.nav-elements {
-  width: 80%;
-  margin: auto;
-}
-.nav-elements ul {
   width: 100%;
-  list-style: none;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  margin: auto;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
 }
-.nav-elements li {
-  height: 50px;
-}
-.nav-elements a {
-  height: 100%;
-  padding: 0 30px;
-  text-decoration: none;
+
+.nav-elements {
+  width: 1200px;
   display: flex;
   align-items: center;
-  color: black;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 15px 7px;
 }
-.nav-elements a:hover,
-a:active {
-  font-weight: 500;
-  font-size: 25px;
-  transition: 0.2s;
-}
-.nav-elements li:first-child {
-  margin-right: auto;
-}
-.nav-elements li:nth-child(6) {
-  margin-left: auto;
-}
-.nav-elements h1 {
+
+.logo {
   font-family: "Salsa", cursive;
-  color: black;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 38px;
+  cursor: pointer;
+}
+
+.nav-elements ul {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  text-align: center;
+}
+
+.nav-elements ul li {
+  width: 80px;
+  height: 25px;
+}
+
+.nav-elements ul li a {
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+.nav-elements ul li a:hover {
+  font-size: 19px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 1em;
+}
+
+.cart-login span {
+  margin: 10px 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.cart-login span:hover {
+  text-decoration: underline;
+  text-underline-offset: 1rem;
 }
