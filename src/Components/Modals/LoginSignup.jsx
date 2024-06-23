@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./LoginSignup.css";
-import user_icon from "../../Pictures/person_24dp_FILL1_wght400_GRAD0_opsz24.png";
-import email_icon from "../../Pictures/mail_24dp_FILL1_wght400_GRAD0_opsz24.png";
-import password_icon from "../../Pictures/lock_24dp_FILL1_wght400_GRAD0_opsz24.png";
+import "../../assets/styles/login_signup.css";
+import user_icon from "../../assets/images/icons/person_24dp_FILL1_wght400_GRAD0_opsz24.png";
+import email_icon from "../../assets/images/icons/mail_24dp_FILL1_wght400_GRAD0_opsz24.png";
+import password_icon from "../../assets/images/icons/lock_24dp_FILL1_wght400_GRAD0_opsz24.png";
 
 const LoginSignup = ({ handleClose }) => {
-  const [action, setAction] = useState("Login");
+  const [action, setAction] = useState("Sign Up");
   return (
     <div className="login-signup">
       <div className="container">

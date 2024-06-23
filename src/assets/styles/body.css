@@ -1,0 +1,14 @@
+.body-content {
+  margin-top: 120px;
+  max-width: 600px;
+  margin-left: 50px;
+}
+.hero-section {
+  font-family: "Salsa", cursive;
+  font-weight: 400;
+  font-size: 48px;
+  color: black;
+}
+.body-content p {
+  font-size: 18px;
+}

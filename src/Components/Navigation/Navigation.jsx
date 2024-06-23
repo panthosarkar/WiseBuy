@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Navigation/Navigation.css";
+import "../../assets/styles/navigation.css";
 import "../Modals/LoginSignup";
 import LoginSignup from "../Modals/LoginSignup";
 import { Link } from "react-router-dom";
@@ -16,20 +16,20 @@ function Navigation() {
         <div className="logo">WiseBuy</div>
         <ul>
           <li>
-            <Link to=".">Home</Link>
+            <Link to="/home">Home</Link>
           </li>
           <li>
-            <Link to=".">Shop</Link>
+            <Link to="/shop">Shop</Link>
           </li>
           <li>
-            <Link to=".">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to=".">About</Link>
+            <Link to="/about">About</Link>
           </li>
         </ul>
         <div className="cart-login">
-          <Link to=".">
+          <Link to="/cart">
             <span class="material-symbols-outlined">shopping_cart</span>
           </Link>
           <Link to="." onClick={handleShow}>

@@ -13,9 +13,9 @@ a {
 }
 body {
   min-height: 100vh;
-  background-image: url(../src/Pictures/cover.png);
+  background-image: url(../src//assets/images/bg-images/cover.png);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center fixed;
   background-size: auto;
   backdrop-filter: blur(3px);
   background-color: #3ed9d8;
