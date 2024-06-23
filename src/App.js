@@ -1,11 +1,12 @@
 import "./App.css";
-import Navigation from "../src/Components/Navigation/Navigation";
+import Navigation from "./Components/Navigation/Navigation";
 import Body from "./Components/Content-Body/Body";
+import LoginSignup from "./Components/Modals/LoginSignup.jsx";
 function App() {
   return (
     <div className="App">
       <Navigation />
-      <Body />
+      <LoginSignup />
     </div>
   );
 }
