@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import "../../assets/styles/login_signup.css";
+import "../../assets/styles/login_signup_modal.css";
 import user_icon from "../../assets/images/icons/person_24dp_FILL1_wght400_GRAD0_opsz24.png";
 import email_icon from "../../assets/images/icons/mail_24dp_FILL1_wght400_GRAD0_opsz24.png";
 import password_icon from "../../assets/images/icons/lock_24dp_FILL1_wght400_GRAD0_opsz24.png";
 
-const LoginSignup = ({ handleClose }) => {
+const LoginSignupModal = ({ handleClose }) => {
   const [action, setAction] = useState("Sign Up");
   return (
     <div className="login-signup">
+      <div className="modal-overlay"></div>
       <div className="container">
         <div className="close-icon" onClick={handleClose}>
           &#x2716;
@@ -65,4 +66,4 @@ const LoginSignup = ({ handleClose }) => {
   );
 };
 
-export default LoginSignup;
+export default LoginSignupModal;

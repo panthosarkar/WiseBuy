@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../assets/styles/navigation.css";
-import "../Modals/LoginSignup";
-import LoginSignup from "../Modals/LoginSignup";
+import "../Modals/LoginSignupModal";
+import LoginSignupModal from "../Modals/LoginSignupModal";
 import { Link } from "react-router-dom";
 
 function Navigation() {
@@ -29,13 +29,13 @@ function Navigation() {
           </li>
         </ul>
         <div className="cart-login">
-          <Link to="/cart">
-            <span class="material-symbols-outlined">shopping_cart</span>
-          </Link>
-          <Link to="." onClick={handleShow}>
-            <span class="material-symbols-outlined">person</span>
-          </Link>
-          {showModal && <LoginSignup handleClose={handleClose} />}
+          <button type="button" to="/cart">
+            <span className="material-symbols-outlined">shopping_cart</span>
+          </button>
+          <button type="button" onClick={handleShow}>
+            <span className="material-symbols-outlined">person</span>
+          </button>
+          {showModal && <LoginSignupModal handleClose={handleClose} />}
         </div>
       </div>
     </div>

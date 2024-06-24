@@ -1,14 +1,75 @@
+.body-container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .body-content {
-  margin-top: 120px;
-  max-width: 600px;
-  margin-left: 50px;
+  width: 1462px;
+  height: 862px;
+  background: #c4f1d2;
+  border-radius: 15px;
+  z-index: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.hero-section {
+.body-back {
+  width: 1849px;
+  height: 783px;
+  background-color: #275f6f;
+  position: absolute;
+  border-radius: 15px;
+  margin: 100px;
+  z-index: -2;
+}
+
+.body-text {
+  left: 0;
+  top: 0;
+  width: 500px;
+  margin: 200px 100px;
+}
+.body-text h1 {
   font-family: "Salsa", cursive;
-  font-weight: 400;
-  font-size: 48px;
-  color: black;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
 }
-.body-content p {
+.body-text p {
+  font-size: 19px;
+  letter-spacing: 2px;
+}
+.body-btns {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 100px auto;
+  gap: 50px;
+}
+.body-btns button {
   font-size: 18px;
+  font-weight: 500;
+  padding: 10px 30px;
+  border: 2px solid #275f6f;
+  border-radius: 10px;
+  width: 200px;
+}
+.login-btn button {
+  color: #275f6f;
+}
+.login-btn button:hover {
+  color: #c4f1d2;
+  background: #275f6f;
+  transition: all 200ms ease-in-out;
+}
+.shop-btn button {
+  color: #c4f1d2;
+  background: #275f6f;
+}
+.shop-btn :hover {
+  color: #275f6f;
+  background: #c4f1d2;
+  transition: all 200ms ease-in-out;
 }
