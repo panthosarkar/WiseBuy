@@ -1,14 +1,17 @@
 .body-container {
+  top: 0;
+  left: 0;
   width: 100%;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
 }
 .body-content {
   width: 1462px;
   height: 862px;
-  background: #c4f1d2;
+  background: #80ebff;
   border-radius: 15px;
   z-index: 0;
   display: flex;
@@ -16,9 +19,9 @@
   align-items: center;
 }
 .body-back {
-  width: 1849px;
-  height: 783px;
-  background-color: #275f6f;
+  width: 90%;
+  height: 780px;
+  background: linear-gradient(135deg, #2b9898, #275f6f);
   position: absolute;
   border-radius: 15px;
   margin: 100px;
@@ -52,24 +55,25 @@
   font-size: 18px;
   font-weight: 500;
   padding: 10px 30px;
-  border: 2px solid #275f6f;
+  border: 1px solid #275f6f;
   border-radius: 10px;
   width: 200px;
+  cursor: pointer;
 }
 .login-btn button {
   color: #275f6f;
 }
 .login-btn button:hover {
   color: #c4f1d2;
-  background: #275f6f;
+  background: linear-gradient(135deg, #2b9898, #275f6f);
   transition: all 200ms ease-in-out;
 }
 .shop-btn button {
   color: #c4f1d2;
-  background: #275f6f;
+  background: linear-gradient(135deg, #2b9898, #275f6f);
 }
-.shop-btn :hover {
+.shop-btn button:hover {
   color: #275f6f;
-  background: #c4f1d2;
+  background: transparent;
   transition: all 200ms ease-in-out;
 }

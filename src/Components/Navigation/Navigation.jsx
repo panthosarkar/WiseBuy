@@ -4,9 +4,8 @@ import "../Modals/LoginSignupModal";
 import LoginSignupModal from "../Modals/LoginSignupModal";
 import { Link } from "react-router-dom";
 
-function Navigation() {
+function Navigation({ cartItemCount }) {
   const [showModal, setShowModal] = useState(false);
-
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
 
@@ -16,7 +15,7 @@ function Navigation() {
         <div className="logo">WiseBuy</div>
         <ul>
           <li>
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/shop">Shop</Link>
@@ -29,9 +28,16 @@ function Navigation() {
           </li>
         </ul>
         <div className="cart-login">
-          <button type="button" to="/cart">
-            <span className="material-symbols-outlined">shopping_cart</span>
-          </button>
+          <Link to="/cart">
+            <button type="button" to="/cart">
+              <span className="material-symbols-outlined">shopping_cart</span>
+            </button>
+          </Link>
+          {cartItemCount > 0 && (
+            <div className="cartCounter">
+              {cartItemCount <= 9 ? cartItemCount : "9+"}
+            </div>
+          )}
           <button type="button" onClick={handleShow}>
             <span className="material-symbols-outlined">person</span>
           </button>

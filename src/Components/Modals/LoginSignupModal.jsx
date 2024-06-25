@@ -13,25 +13,24 @@ const LoginSignupModal = ({ handleClose }) => {
         <div className="close-icon" onClick={handleClose}>
           &#x2716;
         </div>
-        <div className="header">
-          <div className="text">{action}</div>
-          <div className="underline"></div>
+        <div className="login-signup-header">
+          <div className="login-signup-text">{action}</div>
+          <div className="login-signup-underline"></div>
         </div>
-        <div className="inputs">
+        <div className="login-signup-inputs">
           {action === "Login" ? (
             <div></div>
           ) : (
-            <div className="input">
+            <div className="login-signup-input">
               <img src={user_icon} alt="" />
               <input type="text" placeholder="Name" />
             </div>
           )}
-
-          <div className="input">
+          <div className="login-signup-input">
             <img src={email_icon} alt="" />
             <input type="email" placeholder="Email" />
           </div>
-          <div className="input">
+          <div className="login-signup-input">
             <img src={password_icon} alt="" />
             <input type="password" placeholder="Password" />
           </div>
@@ -47,8 +46,8 @@ const LoginSignupModal = ({ handleClose }) => {
                   Sign in
                 </span>
               </div>
-              <div className="submit-container">
-                <div className="submit">Sign Up</div>
+              <div className="login-signup-submit-container">
+                <div className="login-signup-submit">Sign Up</div>
               </div>
             </div>
           ) : (
@@ -66,8 +65,8 @@ const LoginSignupModal = ({ handleClose }) => {
                   Sign up
                 </span>
               </div>
-              <div className="submit-container">
-                <div className="submit">Log in</div>
+              <div className="login-signup-submit-container">
+                <div className="login-signup-submit">Log in</div>
               </div>
             </div>
           )}
