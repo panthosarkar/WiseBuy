@@ -88,6 +88,7 @@
 .forget-password span {
   color: #2b9898;
   cursor: pointer;
+  margin-left: 10px;
 }
 .dont-have-account {
   padding-left: 62px;
@@ -98,6 +99,7 @@
 .dont-have-account span {
   color: #2b9898;
   cursor: pointer;
+  margin-left: 10px;
 }
 .submit-container {
   display: flex;
