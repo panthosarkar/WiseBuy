@@ -5,11 +5,11 @@ import email_icon from "../../assets/images/icons/mail_24dp_FILL1_wght400_GRAD0_
 import password_icon from "../../assets/images/icons/lock_24dp_FILL1_wght400_GRAD0_opsz24.png";
 
 const LoginSignupModal = ({ handleClose }) => {
-  const [action, setAction] = useState("Sign Up");
+  const [action, setAction] = useState("Login");
   return (
     <div className="login-signup">
       <div className="modal-overlay"></div>
-      <div className="container">
+      <div className="login-signup-container">
         <div className="close-icon" onClick={handleClose}>
           &#x2716;
         </div>
@@ -36,30 +36,41 @@ const LoginSignupModal = ({ handleClose }) => {
             <input type="password" placeholder="Password" />
           </div>
           {action === "Sign Up" ? (
-            <div></div>
+            <div className="signup-condition-container">
+              <div className="forget-password">
+                Have an account?
+                <span
+                  onClick={() => {
+                    setAction("Login");
+                  }}
+                >
+                  Sign in
+                </span>
+              </div>
+              <div className="submit-container">
+                <div className="submit">Sign Up</div>
+              </div>
+            </div>
           ) : (
-            <div className="forget-password">
-              Forget password?<span>Click Here</span>
+            <div className="login-condition-container">
+              <div className="forget-password">
+                Forget password?<span>Click Here</span>
+              </div>
+              <div className="dont-have-account">
+                Don't have account?
+                <span
+                  onClick={() => {
+                    setAction("Sign Up");
+                  }}
+                >
+                  Sign up
+                </span>
+              </div>
+              <div className="submit-container">
+                <div className="submit">Log in</div>
+              </div>
             </div>
           )}
-          <div className="submit-container">
-            <div
-              className={action === "Login" ? "submit gray" : "submit"}
-              onClick={() => {
-                setAction("Sign Up");
-              }}
-            >
-              Sign Up
-            </div>
-            <div
-              className={action === "Sign Up" ? "submit gray" : "submit"}
-              onClick={() => {
-                setAction("Login");
-              }}
-            >
-              Login
-            </div>
-          </div>
         </div>
       </div>
     </div>

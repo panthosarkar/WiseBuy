@@ -2,6 +2,7 @@ import "./App.css";
 import Navigation from "./Components/Navigation/Navigation";
 import Body from "./Components/ContentBody/Body.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./Components/Footer/Footer.jsx";
 function App() {
   return (
     <div className="WiseBuy">
@@ -16,6 +17,7 @@ function App() {
             <Route path="/about" element={<Body />} />
           </Routes>
         </div>
+        <Footer />
       </BrowserRouter>
     </div>
   );
