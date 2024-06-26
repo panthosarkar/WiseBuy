@@ -1,0 +1,30 @@
+.shop-search-container {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  border-radius: 28px;
+  background-color: #f6f6f6f6;
+  justify-content: center;
+  margin: 15px auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.shop-search-input {
+  font-size: 20px;
+  color: #333;
+  margin-left: 15px;
+  outline: none;
+  border: none;
+  background: transparent;
+  letter-spacing: 2px;
+  flex: 1;
+}
+.shop-search-icon {
+  font-size: 20px;
+  margin: 0 30px;
+}
+.shop-search-input::placeholder,
+.shop-search-icon {
+  color: rgba(0, 0, 0, 0.5);
+}
