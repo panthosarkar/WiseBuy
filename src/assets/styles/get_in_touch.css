@@ -1,8 +1,11 @@
 .get-in-touch {
-  display: flex;
   height: 100vh;
   width: 100%;
-  margin-top: -100px;
+}
+.contact-body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 .get-in-touch-container {
   display: flex;
@@ -88,15 +91,4 @@
   border: 1px solid #275f6f;
   background: linear-gradient(135deg, #275f6f, #2b9898);
   color: #fff;
-}
-.get-in-touch-back {
-  width: 90%;
-  height: 600px;
-  margin: 100px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #2b9898, #275f6f);
-  border-radius: 15px;
-  z-index: -2;
 }
