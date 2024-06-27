@@ -16,15 +16,12 @@ function Shop() {
         },
       })
       .then(({ data }) => {
-        console.log(data.products);
         setProductData(data.products);
       })
       .catch((err) => {
         console.log(err);
       });
   }, [searchText]);
-
-  console.log(searchText);
 
   return (
     <div className="shop-container">

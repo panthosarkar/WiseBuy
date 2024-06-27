@@ -72,6 +72,7 @@
   border: none;
   outline: none;
   color: #797979;
+  overflow-x: scroll;
   font-size: 19px;
 }
 .login-signup-input img {
