@@ -24,7 +24,13 @@
   font-size: 20px;
   margin: 0 30px;
 }
+.shop-close-icon {
+  font-size: 20px;
+  margin: 0 30px;
+}
 .shop-search-input::placeholder,
-.shop-search-icon {
+.shop-search-icon,
+.shop-close-icon::placeholder,
+.shop-close-icon {
   color: rgba(0, 0, 0, 0.5);
 }

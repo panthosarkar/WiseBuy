@@ -1,25 +1,34 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../../assets/styles/shop.css";
-import SeachBar from "../SearchBar/SeachBar";
+import SeachBar from "../SearchBar/SearchBar";
+import { apiUrl } from "../../utils/url";
 
 function Shop() {
   const [productData, setProductData] = useState([]);
-  const apiUrl = process.env.REACT_APP_API_URL;
+  const [searchText, setSearchText] = useState("");
+
   useEffect(() => {
     axios
-      .get(`${apiUrl}/products`)
-      .then((res) => {
-        console.log(res.data.products);
-        setProductData(res.data.products);
+      .get(`${apiUrl()}/products/search`, {
+        params: {
+          q: searchText,
+        },
+      })
+      .then(({ data }) => {
+        console.log(data.products);
+        setProductData(data.products);
       })
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, [searchText]);
+
+  console.log(searchText);
+
   return (
     <div className="shop-container">
-      <SeachBar />
+      <SeachBar searchText={searchText} setSearchText={setSearchText} />
       <div className="shop-cards">
         {productData.map((product) => (
           <div key={product.id} className="shop-card">
