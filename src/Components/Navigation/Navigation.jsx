@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../../assets/styles/navigation.css";
 import "../Modals/LoginSignupModal";
 import LoginSignupModal from "../Modals/LoginSignupModal";
+import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Navigation({ cartItemCount }) {
@@ -10,37 +10,58 @@ function Navigation({ cartItemCount }) {
   const handleClose = () => setShowModal(false);
 
   return (
-    <div className="nav-container">
-      <div className="nav-elements">
-        <div className="logo">WiseBuy</div>
-        <ul>
+    <div className="w-full m-auto top-0 z-1000 shadow-[0px_-5px_10px_#000f37] mb-10">
+      <div className="w-[1200px] flex items-center justify-between my-0 mx-auto py-4 px-2 ">
+        <div className="font-[Salsa] font-bold text-4xl cursor-pointer ">
+          WiseBuy
+        </div>
+        <ul className=" flex gap-5 items-center justify-center list-none text-center [&>li]:w-20 [&>li]:h-6">
           <li>
-            <Link to="/">Home</Link>
+            <Link
+              className="text-base font-normal cursor-pointer transition-all duration-200 ease-in-out hover:text-xl hover:font-medium hover:underline hover:underline-offset-[16px]  "
+              to="/"
+            >
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/shop">Shop</Link>
+            <Link
+              className="text-base font-normal cursor-pointer transition-all duration-200 ease-in-out hover:text-xl hover:font-medium hover:underline hover:underline-offset-[16px]  "
+              to="/shop"
+            >
+              Shop
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link
+              className="text-base font-normal cursor-pointer transition-all duration-200 ease-in-out hover:text-xl hover:font-medium hover:underline hover:underline-offset-[16px]  "
+              to="/contact"
+            >
+              Contact
+            </Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link
+              className="text-base font-normal cursor-pointer transition-all duration-200 ease-in-out hover:text-xl hover:font-medium hover:underline hover:underline-offset-[16px]  "
+              to="/about"
+            >
+              About
+            </Link>
           </li>
         </ul>
-        <div className="cart-login">
+        <div className="flex  ">
           <Link to="/cart">
-            <button type="button" to="/cart">
-              <span className="material-symbols-outlined">shopping_cart</span>
-            </button>
+            <FaShoppingCart className="my-3 mx-5 text-xl bg-transparent border-none hover:text-[#275f6f] hover:underline-offset-[16px] hover:transition-all hover:duration-200 hover:ease-in-out" />
           </Link>
           {cartItemCount > 0 && (
             <div className="cartCounter">
               {cartItemCount <= 9 ? cartItemCount : "9+"}
             </div>
           )}
-          <button type="button" onClick={handleShow}>
-            <span className="material-symbols-outlined">person</span>
-          </button>
+          <FaUser
+            onClick={handleShow}
+            className="my-3 mx-5 text-xl bg-transparent border-none hover:text-[#275f6f] hover:border hover:underline-offset-[16px] hover:transition-all hover:duration-200 hover:ease-in-out"
+          />
           {showModal && <LoginSignupModal handleClose={handleClose} />}
         </div>
       </div>
