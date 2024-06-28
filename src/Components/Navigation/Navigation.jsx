@@ -51,7 +51,7 @@ function Navigation({ cartItemCount }) {
         </ul>
         <div className="flex  ">
           <Link to="/cart">
-            <FaShoppingCart className="my-3 mx-5 text-xl bg-transparent border-none hover:text-[#275f6f] hover:underline-offset-[16px] hover:transition-all hover:duration-200 hover:ease-in-out" />
+            <FaShoppingCart className="my-3 mx-5 text-xl bg-transparent border-none hover:text-[#275f6f] hover:underline hover:underline-offset-4 transition-all duration-200 ease-in-out" />
           </Link>
           {cartItemCount > 0 && (
             <div className="cartCounter">
@@ -60,7 +60,7 @@ function Navigation({ cartItemCount }) {
           )}
           <FaUser
             onClick={handleShow}
-            className="my-3 mx-5 text-xl bg-transparent border-none hover:text-[#275f6f] hover:border hover:underline-offset-[16px] hover:transition-all hover:duration-200 hover:ease-in-out"
+            className="my-3 mx-5 text-xl bg-transparent border-none hover:text-[#275f6f] hover:underline hover:underline-offset-4 transition-all duration-200 ease-in-out"
           />
           {showModal && <LoginSignupModal handleClose={handleClose} />}
         </div>
