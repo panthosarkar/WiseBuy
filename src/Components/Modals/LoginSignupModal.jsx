@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../../assets/styles/login_signup_modal.css";
 import user_icon from "../../assets/images/icons/person_24dp_FILL1_wght400_GRAD0_opsz24.png";
 import email_icon from "../../assets/images/icons/mail_24dp_FILL1_wght400_GRAD0_opsz24.png";
 import password_icon from "../../assets/images/icons/lock_24dp_FILL1_wght400_GRAD0_opsz24.png";
@@ -55,21 +54,29 @@ const LoginSignupModal = ({ handleClose }) => {
   };
 
   return (
-    <div className="login-signup">
-      <div className="modal-overlay"></div>
-      <div className="login-signup-container">
-        <div className="close-icon" onClick={handleClose}>
+    <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center z-[1000]">
+      <div className="w-[100vw] h-[100vh] top-0 left-0 right-0 bottom-0 absolute backdrop-blur-md -z-[1]"></div>
+      <div className="flex flex-col m-auto mt-[100px] w-[500px] bg-white rounded-lg pb-[30px] shadow-[2px_1px_10px_0px_black]">
+        <div
+          className="text-right m-8 text-2xl cursor-pointer text-[#2b9898] hover:text-[#1e6a6a]"
+          onClick={handleClose}
+        >
           &#x2716;
         </div>
-        <div className="login-signup-header">
-          <div className="login-signup-text">{action}</div>
-          <div className="login-signup-underline"></div>
+        <div className="flex flex-col items-center gap-2 w-full mt-0">
+          <div className="text-[#2b9898] text-5xl font-bold">{action}</div>
+          <div className="w-[60px] h-[6px] bg-[#2b9898] rounded-lg mt-4"></div>
         </div>
-        <div className="login-signup-inputs">
+        <div className="mt-[40px] flex flex-col gap-6">
           {action === "Login" ? (
-            <div className="login-signup-input">
-              <img src={user_icon} alt="" />
+            <div className="flex items-center m-auto w-[380px] h-[60px] bg-[#eaeaea] rounded-md">
+              <img
+                src={user_icon}
+                className="my-0 mx-[30px] w-[30px] h-[30px]"
+                alt=""
+              />
               <input
+                className="h-[50px] w-[400px] bg-transparent border-none outline-none text-[#797979] overflow-x-scroll text-xl"
                 type="text"
                 value={username}
                 onChange={(e) => setUserName(e.target.value)}
@@ -77,9 +84,14 @@ const LoginSignupModal = ({ handleClose }) => {
               />
             </div>
           ) : (
-            <div className="login-signup-input">
-              <img src={user_icon} alt="" />
+            <div className="flex items-center m-auto w-[380px] h-[60px] bg-[#eaeaea] rounded-md">
+              <img
+                src={user_icon}
+                className="my-0 mx-[30px] w-[30px] h-[30px]"
+                alt=""
+              />
               <input
+                className="h-[50px] w-[400px] bg-transparent border-none outline-none text-[#797979] overflow-x-scroll text-xl"
                 type="email"
                 value={username}
                 onChange={(e) => setUserName(e.target.value)}
@@ -88,9 +100,14 @@ const LoginSignupModal = ({ handleClose }) => {
               />
             </div>
           )}
-          <div className="login-signup-input">
-            <img src={password_icon} alt="" />
+          <div className="flex items-center m-auto w-[380px] h-[60px] bg-[#eaeaea] rounded-md">
+            <img
+              src={password_icon}
+              className="my-0 mx-[30px] w-[30px] h-[30px]"
+              alt=""
+            />
             <input
+              className="h-[50px] w-[400px] bg-transparent border-none outline-none text-[#797979] overflow-x-scroll text-xl"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -100,9 +117,14 @@ const LoginSignupModal = ({ handleClose }) => {
           </div>
           {action === "Sign Up" ? (
             <div className="signup-condition-container">
-              <div className="login-signup-input">
-                <img src={email_icon} alt="" />
+              <div className="flex items-center m-auto w-[380px] h-[60px] bg-[#eaeaea] rounded-md">
+                <img
+                  src={email_icon}
+                  className="my-0 mx-[30px] w-[30px] h-[30px]"
+                  alt=""
+                />
                 <input
+                  className="h-[50px] w-[300px] bg-transparent border-none outline-none text-[#797979] overflow-x-scroll text-xl"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -110,9 +132,10 @@ const LoginSignupModal = ({ handleClose }) => {
                   required
                 />
               </div>
-              <div className="forget-password">
+              <div className="pl-[62px] mt-[27px] text-[#797979] text-xl">
                 Have an account?
                 <span
+                  className="text-[#2b9898] cursor-pointer ml"
                   onClick={() => {
                     setAction("Login");
                   }}
@@ -120,18 +143,24 @@ const LoginSignupModal = ({ handleClose }) => {
                   Sign in
                 </span>
               </div>
-              <div className="login-signup-submit-container">
-                <div className="login-signup-submit">Sign Up</div>
+              <div className="flex gap-[30px] my-[30px] w-full justify-center items-center ">
+                <div className="flex justify-center items-center w-[200px] h-[50px] text-[#fff] bg-[#2b9898] rounded-[50px] text-xl font-bold cursor-pointer hover:bg-[#eaeaea] hover:text-[#676767]">
+                  Sign Up
+                </div>
               </div>
             </div>
           ) : (
             <div className="login-condition-container">
-              <div className="forget-password">
-                Forget password?<span>Click Here</span>
+              <div className="pl-[62px] mt-[27px] text-[#797979] text-xl">
+                Forget password?
+                <span className="text-[#2b9898] cursor-pointer ml-[10px]">
+                  Click Here
+                </span>
               </div>
-              <div className="dont-have-account">
+              <div className="pl-[62px] mt-[27px] text-[#797979] text-xl">
                 Don't have account?
                 <span
+                  className="text-[#2b9898] cursor-pointer ml-[10px]"
                   onClick={() => {
                     setAction("Sign Up");
                   }}
@@ -140,10 +169,12 @@ const LoginSignupModal = ({ handleClose }) => {
                 </span>
               </div>
               <div
-                className="login-signup-submit-container"
+                className="flex gap-[30px] my-[30px] w-full justify-center items-center "
                 onClick={handleSubmit}
               >
-                <div className="login-signup-submit">Log in</div>
+                <div className="flex justify-center items-center w-[200px] h-[50px] text-[#fff] bg-[#2b9898] rounded-[50px] text-xl font-bold cursor-pointer hover:bg-[#eaeaea] hover:text-[#676767]">
+                  Log in
+                </div>
               </div>
             </div>
           )}
