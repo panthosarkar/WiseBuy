@@ -6,6 +6,7 @@ import Footer from "./Components/Footer/Footer.jsx";
 import GetInTouch from "./Components/GetInTouch/GetInTouch.jsx";
 import { Cart } from "./Components/Cart/Cart.jsx";
 import Shop from "./Components/Shop/Shop.jsx";
+import ProductDetails from "./Components/ProductDetails/ProductDetails.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/shop" element={<Shop />} />
             <Route path="/about" element={<Body />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/product/:productId" element={<ProductDetails />} />
           </Routes>
         </div>
         <Footer />

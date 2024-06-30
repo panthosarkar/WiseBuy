@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; // Import Link from React Router
 import SearchBar from "../SearchBar/SearchBar";
 import { apiUrl } from "../../utils/url";
 
@@ -23,7 +24,7 @@ function Shop() {
         })
         .then((response) => {
           setProductData(response.data.products);
-          setTotalItems(response.data.total); // Assuming 'total' is the field in API response indicating total count of products
+          setTotalItems(response.data.total);
         })
         .catch((error) => {
           console.error("Error fetching data:", error);
@@ -42,8 +43,9 @@ function Shop() {
       <SearchBar searchText={searchText} setSearchText={setSearchText} />
       <div className="flex items-center justify-center flex-wrap">
         {productData.map((product) => (
-          <div
+          <Link
             key={product.id}
+            to={`/product/${product.id}`}
             className="overflow-hidden bg-[#f4fffa] text-[#212021] w-[300px] h-[400px] p-4 flex flex-col items-center justify-center rounded-2xl m-4 hover:shadow-lg cursor-pointer"
           >
             <img
@@ -55,14 +57,14 @@ function Shop() {
               <h3 className="w-full mb-3 text-lg font-bold">{product.title}</h3>
               <p>Price: ${product.price}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       {/* Pagination */}
       <Pagination
         currentPage={currentPage}
         itemsPerPage={itemsPerPage}
-        totalItems={totalItems} // Use the total count of products from the API
+        totalItems={totalItems}
         onPageChange={handlePageChange}
       />
     </div>
