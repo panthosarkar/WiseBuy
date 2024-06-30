@@ -17,3 +17,9 @@ body {
 button {
   cursor: pointer;
 }
+.custom-gradient {
+  background: linear-gradient(135deg, #275f6f, #2b9898);
+}
+.custom-shadow {
+  box-shadow: 2px 1px 10px 0px #000000;
+}
