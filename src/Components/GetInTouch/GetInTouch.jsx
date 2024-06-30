@@ -15,11 +15,11 @@ function GetInTouch() {
     <div className="h-[100vh] w-full inline-block justify-between my-0 mx-auto ">
       <div className="flex justify-center items-end  gap-12 ">
         <div className="flex flex-col w-[480px] mx-4 bg-[#91e2a8] rounded-2xl shadow-[2px_2px_10px_-4px_#000000]">
-          <div className="flex flex-col items-center -tracking-tighter w-full">
-            <div className="text-[#275f6f] text-[48px] font-bold mt-8">
+          <div className="flex flex-col items-center tracking-tighter w-full">
+            <div className="text-[#275f6f] text-[48px] font-bold my-4">
               Get in Touch
             </div>
-            <div className="w-[50%] h-[6px] bg-[#275f6f] rounded-lg mb-8"></div>
+            <div className="w-[50%] h-[6px] bg-[#275f6f] rounded-lg mb-4"></div>
           </div>
           <div className="p-8 flex flex-col justify-center items-center">
             <GetInTouchInput placeholder="FirstName" />
