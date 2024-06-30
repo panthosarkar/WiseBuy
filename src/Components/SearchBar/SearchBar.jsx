@@ -25,7 +25,7 @@ const SearchBar = ({ searchText, setSearchText }) => {
       <form onSubmit={handleSearch}>
         <div className="bg-[#f6f6f6] w-max flex items-center p-[14px] rounded-3xl justify-center my-[15px] mx-auto transition-all duration-300 ease-in-out">
           <input
-            className="text-[20px] text-[#333] ml-[15px] outline-none border-none bg-transparent -tracking-[2px] flex-1 placeholder:text-[#00000080]"
+            className="text-[20px] text-[#333] ml-[15px] outline-none border-none bg-transparent tracking-[1px] flex-1 placeholder:text-[#00000080]"
             type="text"
             value={searchInput}
             onChange={handleInputChange}

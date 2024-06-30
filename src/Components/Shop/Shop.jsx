@@ -1,26 +1,29 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import SeachBar from "../SearchBar/SearchBar";
+import SearchBar from "../SearchBar/SearchBar";
 import { apiUrl } from "../../utils/url";
 
 function Shop() {
   const [productData, setProductData] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
+  const [totalItems, setTotalItems] = useState(0);
+  const itemsPerPage = 30;
 
   useEffect(() => {
     const fetchData = () => {
+      const skip = (currentPage - 1) * itemsPerPage;
       axios
         .get(`${apiUrl()}/products/search`, {
           params: {
             q: searchText,
-            _page: currentPage,
-            _limit: itemsPerPage,
+            limit: itemsPerPage,
+            skip: skip,
           },
         })
         .then((response) => {
           setProductData(response.data.products);
+          setTotalItems(response.data.total); // Assuming 'total' is the field in API response indicating total count of products
         })
         .catch((error) => {
           console.error("Error fetching data:", error);
@@ -36,7 +39,7 @@ function Shop() {
 
   return (
     <div className="shop-container">
-      <SeachBar searchText={searchText} setSearchText={setSearchText} />
+      <SearchBar searchText={searchText} setSearchText={setSearchText} />
       <div className="flex items-center justify-center flex-wrap">
         {productData.map((product) => (
           <div
@@ -59,7 +62,7 @@ function Shop() {
       <Pagination
         currentPage={currentPage}
         itemsPerPage={itemsPerPage}
-        totalItems={productData.length} // This should ideally be the total number of products available, not the length of current page data
+        totalItems={totalItems} // Use the total count of products from the API
         onPageChange={handlePageChange}
       />
     </div>
