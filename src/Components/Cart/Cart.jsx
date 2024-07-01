@@ -20,83 +20,76 @@ const Cart = () => {
   };
 
   return (
-    <div className="cart-wrapper">
-      <div className="cart-container">
+    <div className="p-4 w-full h-[100vh]">
+      <div className="bg-white shadow-md rounded-lg p-6">
         {cart.length >= 1 ? (
-          <div className="grid my-5">
-            <div className="cartItem p-3">
-              <h2>Order Summary</h2>
+          <div className="grid gap-4">
+            <div className="mb-6">
+              <h2 className="text-xl font-bold mb-4">Order Summary</h2>
               {cart.map((item) => (
-                <div className="item" key={item.product.id}>
-                  <div className="grid py-3">
-                    <div className="itemImage">
-                      <img src={item.product.image} alt="" />
+                <div className="flex items-center mb-4" key={item.product.id}>
+                  <img
+                    src={item.product.image}
+                    alt=""
+                    className="w-20 h-20 object-cover mr-4"
+                  />
+                  <div className="flex-1">
+                    <Link
+                      to={"/product/" + item.product.id}
+                      className="text-lg font-medium"
+                    >
+                      {item.product.title}
+                    </Link>
+                    <div className="text-gray-500">
+                      ${round(item.product.price * item.quantity, 2)}
                     </div>
-                    <div className="itemDesc">
-                      <div className="title">
-                        <Link
-                          to={"/product/" + item.product.id}
-                          className="titleLink"
-                        >
-                          {item.product.title}
-                        </Link>
-                      </div>
-                      <span className="price">
-                        ${round(item.product.price * item.quantity, 2)}
-                      </span>
-                      {/* <div className="remove">Remove</div> */}
-                    </div>
-                    <div className="itemControl flex">
-                      <div>
-                        <button
-                          onClick={() => increaseQuantity(item.product.id)}
-                          className="addQty"
-                        >
-                          +
-                        </button>
-                        <span className="mx-1">{item.quantity}</span>
-                        <button
-                          onClick={() => decreaseQuantity(item.product.id)}
-                          disabled={item.quantity === 1}
-                          className="removeQty"
-                        >
-                          -
-                        </button>
-                        <div
-                          className="remove my-1"
-                          onClick={() => removeFromCart(item.product.id)}
-                        >
-                          Remove
-                        </div>
-                      </div>
+                    <div className="flex items-center mt-2">
+                      <button
+                        onClick={() => increaseQuantity(item.product.id)}
+                        className="bg-gray-200 px-2 py-1 rounded"
+                      >
+                        +
+                      </button>
+                      <span className="mx-2">{item.quantity}</span>
+                      <button
+                        onClick={() => decreaseQuantity(item.product.id)}
+                        disabled={item.quantity === 1}
+                        className="bg-gray-200 px-2 py-1 rounded"
+                      >
+                        -
+                      </button>
+                      <button
+                        onClick={() => removeFromCart(item.product.id)}
+                        className="text-red-500 ml-4"
+                      >
+                        Remove
+                      </button>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="payment p-3">
-              <h2>Payment Summary</h2>
-              <div className="summary py-3 my-2">
-                <div className="flex py-1">
+            <div>
+              <h2 className="text-xl font-bold mb-4">Payment Summary</h2>
+              <div className="space-y-2">
+                <div className="flex justify-between">
                   <span>Subtotal:</span>
-                  <span className="price">${round(cartTotal(), 2)}</span>
+                  <span>${round(cartTotal(), 2)}</span>
                 </div>
-                <div className="flex py-1">
+                <div className="flex justify-between">
                   <span>Shipping Fee:</span>
-                  <span className="price">${SHIPPING_CHARGES}</span>
+                  <span>${SHIPPING_CHARGES}</span>
                 </div>
-                <div className=" flex py-1">
+                <div className="flex justify-between font-bold">
                   <span>Total:</span>
-                  <span className="price">
-                    ${round(cartTotal() + SHIPPING_CHARGES, 2)}
-                  </span>
+                  <span>${round(cartTotal() + SHIPPING_CHARGES, 2)}</span>
                 </div>
               </div>
             </div>
           </div>
         ) : (
-          <div className="error">
-            <p>&#9432; Cart is empty</p>
+          <div className="text-center text-gray-500">
+            <p>Cart is empty</p>
           </div>
         )}
       </div>
